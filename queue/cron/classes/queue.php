@@ -25,8 +25,10 @@
 
 namespace queue_cron;
 
-if (!class_exists("\\Pheanstalk\\Pheanstalk")) {
-    require_once(dirname(__FILE__) . "/../vendor/autoload.php");
+if (!class_exists("\\Pheanstalk\\Pheanstalk")) { 
+    if (file_exists(dirname(__FILE__) . "/../vendor/autoload.php")) { 
+        require_once(dirname(__FILE__) . "/../vendor/autoload.php"); 
+    } 
 }
 
 use Pheanstalk\Pheanstalk;
