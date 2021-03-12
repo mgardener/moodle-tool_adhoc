@@ -182,14 +182,14 @@ class tool_adhoc_setting_managequeues extends admin_setting {
             if (isset($enabled[$queue])) {
                 $aurl = new moodle_url($url, array('action' => 'disable', 'queue' => $queue));
                 $hideshow = "<a href=\"$aurl\">";
-                $hideshow .= "<img src=\"" . $OUTPUT->pix_url('t/hide') . "\" class=\"iconsmall\" alt=\"$strdisable\" /></a>";
+                $hideshow .= "<img src=\"" . $OUTPUT->image_url('t/hide') . "\" class=\"iconsmall\" alt=\"$strdisable\" /></a>";
                 $isenabled = true;
                 $displayname = "<span>$name</span>";
             } else {
                 if (isset($available[$queue])) {
                     $aurl = new moodle_url($url, array('action' => 'enable', 'queue' => $queue));
                     $hideshow = "<a href=\"$aurl\">";
-                    $hideshow .= "<img src=\"" . $OUTPUT->pix_url('t/show') . "\" class=\"iconsmall\" alt=\"$strenable\" /></a>";
+                    $hideshow .= "<img src=\"" . $OUTPUT->image_url('t/show') . "\" class=\"iconsmall\" alt=\"$strenable\" /></a>";
                     $isenabled = false;
                     $displayname = "<span class=\"dimmed_text\">$name</span>";
                 } else {
@@ -210,16 +210,16 @@ class tool_adhoc_setting_managequeues extends admin_setting {
                 if ($updowncount > 1) {
                     $aurl = new moodle_url($url, array('action' => 'up', 'queue' => $queue));
                     $updown .= "<a href=\"$aurl\">";
-                    $updown .= "<img src=\"" . $OUTPUT->pix_url('t/up') . "\" alt=\"$strup\" class=\"iconsmall\" /></a>&nbsp;";
+                    $updown .= "<img src=\"" . $OUTPUT->image_url('t/up') . "\" alt=\"$strup\" class=\"iconsmall\" /></a>&nbsp;";
                 } else {
-                    $updown .= "<img src=\"" . $OUTPUT->pix_url('spacer') . "\" class=\"iconsmall\" alt=\"\" />&nbsp;";
+                    $updown .= "<img src=\"" . $OUTPUT->image_url('spacer') . "\" class=\"iconsmall\" alt=\"\" />&nbsp;";
                 }
                 if ($updowncount < $queuecount) {
                     $aurl = new moodle_url($url, array('action' => 'down', 'queue' => $queue));
                     $updown .= "<a href=\"$aurl\">";
-                    $updown .= "<img src=\"" . $OUTPUT->pix_url('t/down') . "\" alt=\"$strdown\" class=\"iconsmall\" /></a>";
+                    $updown .= "<img src=\"" . $OUTPUT->image_url('t/down') . "\" alt=\"$strdown\" class=\"iconsmall\" /></a>";
                 } else {
-                    $updown .= "<img src=\"" . $OUTPUT->pix_url('spacer') . "\" class=\"iconsmall\" alt=\"\" />";
+                    $updown .= "<img src=\"" . $OUTPUT->image_url('spacer') . "\" class=\"iconsmall\" alt=\"\" />";
                 }
                 ++$updowncount;
             }
